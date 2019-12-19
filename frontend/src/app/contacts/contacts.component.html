@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+
+    <app-add-contact ></app-add-contact>
+  </div>
+  <div class="row">
+    <div *ngFor="let contact of contacts">
+      <br><br>
+      <div class="col-md-3">
+        {{contact.first_name}}
+      </div>
+      <div class="col-md-3">
+        {{contact.last_name}}
+      </div>
+      <div class="col-md-3">
+        {{contact.phone}}
+      </div>
+      <div class="col-md-1">
+        <input type="button" (click)="deleteContact(contact._id)" value="Delete" class="btn btn-danger">
+      </div>
+      <div class="col-md-2">
+        <input type="button" (click)="editContact(contact._id)" value="Edit" class="btn btn-primary">
+      </div>
+    </div>
+  </div>
+</div>
